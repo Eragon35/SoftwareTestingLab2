@@ -9,8 +9,16 @@ public class CotCalculator extends AbstractFunction {
     private SinCalculator sinCalculator;
 
     {
-        //todo: add more constants
         getStubsTable().put(PI, tan(PI));
+        getStubsTable().put(-PI, tan(-PI));
+        getStubsTable().put(-PI / 2, tan(-PI / 2));
+        getStubsTable().put(0.0, tan(0.0));
+        getStubsTable().put(PI / 2, tan(PI / 2));
+        getStubsTable().put(PI, tan(PI));
+        getStubsTable().put(3 * PI / 4, tan(3 * PI / 4));
+        getStubsTable().put(-3 * PI / 4, tan(-3 * PI / 4));
+        getStubsTable().put( PI / 4, tan(PI / 4));
+        getStubsTable().put(-PI / 4, tan(-PI / 4));
     }
 
     public CotCalculator(Double accuracy) {

@@ -12,8 +12,16 @@ import static java.lang.Math.*;
 @Data
 public class SinCalculator extends AbstractFunction {
     {
-        //todo: add more constants
         getStubsTable().put(PI, sin(PI));
+        getStubsTable().put(-PI, sin(-PI));
+        getStubsTable().put(-PI / 2, sin(-PI / 2));
+        getStubsTable().put(0.0, sin(0.0));
+        getStubsTable().put(PI / 2, sin(PI / 2));
+        getStubsTable().put(PI, sin(PI));
+        getStubsTable().put(3 * PI / 4, sin(3 * PI / 4));
+        getStubsTable().put(-3 * PI / 4, sin(-3 * PI / 4));
+        getStubsTable().put( PI / 4, sin(PI / 4));
+        getStubsTable().put(-PI / 4, sin(-PI / 4));
     }
 
     public SinCalculator(Double accuracy) {

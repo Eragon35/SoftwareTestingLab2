@@ -2,10 +2,21 @@ package tpo.logarithmic;
 
 import tpo.AbstractFunction;
 
+import static java.lang.Double.*;
+
 public class Log3Calculator extends AbstractFunction {
     private LnCalculator ln;
     {
         getStubsTable().put(3.0, 1.0);
+        getStubsTable().put(POSITIVE_INFINITY, POSITIVE_INFINITY);
+        getStubsTable().put(3.0 - 0.01, 0.996961);
+        getStubsTable().put(3.0 + 0.01, 1.00303);
+        getStubsTable().put(0.0 - 0.01, NaN);
+        getStubsTable().put(0.0, NEGATIVE_INFINITY);
+        getStubsTable().put(0.0 + 0.01, -4.191807);
+        getStubsTable().put(1.0 - 0.01, -0.00914821);
+        getStubsTable().put(1.0, 0.0);
+        getStubsTable().put(1.0 + 0.01, 0.00905718);
     }
 
     public Log3Calculator(Double accuracy){

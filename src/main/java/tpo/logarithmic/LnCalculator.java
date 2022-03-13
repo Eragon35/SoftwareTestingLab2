@@ -9,6 +9,20 @@ import static java.lang.Math.*;
 public class LnCalculator extends AbstractFunction {
     {
         getStubsTable().put(E, log(Math.E));
+        getStubsTable().put(POSITIVE_INFINITY, log(POSITIVE_INFINITY));
+        getStubsTable().put(PI, log(PI));
+        getStubsTable().put(E - 0.01, log(E - 0.01));
+        getStubsTable().put(E + 0.01, log(E + 0.01));
+        getStubsTable().put(0.0 - 0.01, log(0.0 - 0.01));
+        getStubsTable().put(0.0, log(0.0));
+        getStubsTable().put(0.0 + 0.01, log(0.0 + 0.01));
+        getStubsTable().put(1.0 - 0.01, log(1.0 - 0.01));
+        getStubsTable().put(1.0, log(1.0));
+        getStubsTable().put(1.0 + 0.01, log(1.0 + 0.01));
+        getStubsTable().put(2.0, log(2.0));
+        getStubsTable().put(3.0, log(3.0));
+        getStubsTable().put(5.0, log(5.0));
+        getStubsTable().put(10.0, log(10.0));
     }
 
     public LnCalculator(double accuracy){ super(accuracy);}
