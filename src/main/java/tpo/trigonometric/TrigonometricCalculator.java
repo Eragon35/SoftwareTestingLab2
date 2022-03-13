@@ -30,9 +30,10 @@ public class TrigonometricCalculator extends AbstractFunction {
         double csc = cscCalculator.calculateFunction(x);
         double sec = secCalculator.calculateFunction(x);
         double sin = sinCalculator.calculateFunction(x);
-        return (cos / sec - csc) * (sec * sec) * (cos + sec);
+        return (cot / sec - csc) * (sec * sec) * (cos + sec);
     }
 
+    //todo: add stub
     public Double calculateTrigonometricFunctionStub(){
         return 0.0;
     }

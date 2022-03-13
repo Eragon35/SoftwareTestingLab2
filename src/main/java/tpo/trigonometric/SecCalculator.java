@@ -2,8 +2,7 @@ package tpo.trigonometric;
 
 import tpo.AbstractFunction;
 
-import static java.lang.Math.PI;
-import static java.lang.Math.cos;
+import static java.lang.Math.*;
 
 public class SecCalculator extends AbstractFunction {
     private CosCalculator cosCalculator;

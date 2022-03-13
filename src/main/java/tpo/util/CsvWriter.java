@@ -8,7 +8,7 @@ import java.util.Locale;
 
 @Data
 public class CsvWriter {
-    private String filePath = "src/test/resources/results/";
+    private String filePath = "src/test/resources/";
     private double step;
     private double lowerBorder;
     private double upperBorder;
@@ -22,7 +22,7 @@ public class CsvWriter {
     }
 
     public void setFilePath(String fileName) {
-        this.filePath = String.format("src/test/resources/results/%s", fileName);
+        this.filePath = String.format("src/test/resources/%s", fileName);
     }
 
     public void log(AbstractFunction function) {
