@@ -34,7 +34,8 @@ public class TrigonometricCalculator extends AbstractFunction {
     }
 
     //todo: add stub
-    public Double calculateTrigonometricFunctionStub(){
-        return 0.0;
+    public Double calculateStub(Double x, Double cos, Double cot, Double csc, Double sec){
+        if (x > 0.0) throw new IllegalArgumentException("X должен быть меньше или равен нулю");
+        return (cot / sec - csc) * (sec * sec) * (cos + sec);
     }
 }
