@@ -26,11 +26,11 @@ public class Log5Calculator extends AbstractFunction {
 
     @Override
     public Double calculateFunction(Double x) {
-        return ln.calculateFunction(x) / ln.calculateFunction(2.0);
+        return ln.calculateFunction(x) / ln.calculateFunction(5.0);
     }
 
     @Override
     public Double calculateStub(Double stub) {
-        return stub / ln.getStubsTable().get(2.0);
+        return stub / ln.getStubsTable().get(5.0);
     }
 }

@@ -15,7 +15,7 @@ public class LogCalculatorUpToDown {
     private LnCalculator ln;
     private Log2Calculator log2;
     private Log3Calculator log3;
-    private Log3Calculator log5;
+    private Log5Calculator log5;
     private Log10Calculator log10;
     private final double DELTA = 0.05;
     private final double ACCURACY = 0.001;
@@ -25,7 +25,7 @@ public class LogCalculatorUpToDown {
         this.ln = new LnCalculator(ACCURACY);
         this.log2 = new Log2Calculator(ACCURACY);
         this.log3 = new Log3Calculator(ACCURACY);
-        this.log5 = new Log3Calculator(ACCURACY);
+        this.log5 = new Log5Calculator(ACCURACY);
         this.log10 = new Log10Calculator(ACCURACY);
     }
 
