@@ -6,11 +6,11 @@ import static java.lang.Math.*;
 
 
 public class LogarithmicCalculator extends AbstractFunction {
-    private LnCalculator lnCalc;
-    private Log2Calculator log2Calc;
-    private Log3Calculator log3Calc;
-    private Log5Calculator log5Calc;
-    private Log10Calculator log10Calc;
+    private final LnCalculator lnCalc;
+    private final Log2Calculator log2Calc;
+    private final Log3Calculator log3Calc;
+    private final Log5Calculator log5Calc;
+    private final Log10Calculator log10Calc;
 
     public LogarithmicCalculator(Double accuracy, LnCalculator ln, Log2Calculator log2, Log3Calculator log3, Log5Calculator log5, Log10Calculator log10) {
         super(accuracy);
@@ -33,8 +33,7 @@ public class LogarithmicCalculator extends AbstractFunction {
         return (pow((ln/log2), 3) / log2) - (ln / ln) + ((log10 + pow(log2, 3))/ log3) + (log3 - pow(pow(log5, 2), 2));
     }
 
-// todo: add stub
-public Double calculateStub(Double x, Double ln, Double log2, Double log3, Double log5, Double log10) {
+    public Double calculateStub(Double x, Double ln, Double log2, Double log3, Double log5, Double log10) {
         if (x <= 0.0) { throw new IllegalArgumentException("X должен быть больше нуля"); }
         return (pow((ln/log2), 3) / log2) - (ln / ln) + ((log10 + pow(log2, 3))/ log3) + (log3 - pow(pow(log5, 2), 2));
     }

@@ -7,7 +7,7 @@ import static java.lang.Math.*;
 
 
 public class Log10Calculator extends AbstractFunction {
-    private LnCalculator ln;
+    private final LnCalculator ln;
     {
         getStubsTable().put(POSITIVE_INFINITY, log10(POSITIVE_INFINITY));
         getStubsTable().put(10.0 - 0.01, log10(10.0 - 0.01));

@@ -3,7 +3,7 @@ package tpo.logarithmic;
 import tpo.AbstractFunction;
 
 public class Log2Calculator extends AbstractFunction {
-    private LnCalculator ln;
+    private final LnCalculator ln;
     {
         getStubsTable().put(2.0, 1.0);
         getStubsTable().put(Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY);

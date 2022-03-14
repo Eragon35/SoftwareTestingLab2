@@ -5,7 +5,7 @@ import tpo.AbstractFunction;
 import static java.lang.Double.*;
 
 public class Log5Calculator extends AbstractFunction {
-    private LnCalculator ln;
+    private final LnCalculator ln;
     {
         getStubsTable().put(POSITIVE_INFINITY, POSITIVE_INFINITY);
         getStubsTable().put(5.0 - 0.01, 0.998756);
