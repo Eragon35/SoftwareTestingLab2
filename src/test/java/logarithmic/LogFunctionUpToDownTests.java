@@ -22,7 +22,7 @@ public class LogFunctionUpToDownTests {
     private Log3Calculator log3;
     private Log5Calculator log5;
     private Log10Calculator log10;
-    private CsvWriter logger = new CsvWriter("logarithmic/ln-results.csv", 0.25, 5.0, 0.5);
+    private final CsvWriter logger = new CsvWriter("logarithmic/ln-results.csv", 0.25, 5.0, 0.5);
     private final double DELTA = 0.05;
     private final double ACCURACY = 0.001;
 

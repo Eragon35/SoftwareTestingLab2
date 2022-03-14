@@ -4,8 +4,8 @@ import tpo.logarithmic.LogarithmicCalculator;
 import tpo.trigonometric.TrigonometricCalculator;
 
 public class SystemSolver {
-    private TrigonometricCalculator trigonometricCalculator;
-    private LogarithmicCalculator logarithmicCalculator;
+    private final TrigonometricCalculator trigonometricCalculator;
+    private final LogarithmicCalculator logarithmicCalculator;
 
     public SystemSolver(TrigonometricCalculator trigonometricCalculator, LogarithmicCalculator logarithmicCalculator) {
         this.trigonometricCalculator = trigonometricCalculator;
@@ -14,6 +14,6 @@ public class SystemSolver {
 
     public Double calculate(Double x) {
         if (x <= 0) return trigonometricCalculator.calculateFunction(x);
-        else return 0.0;
+        else return logarithmicCalculator.calculateFunction(x);
     }
 }

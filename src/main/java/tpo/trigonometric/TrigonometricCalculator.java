@@ -3,11 +3,11 @@ package tpo.trigonometric;
 import tpo.AbstractFunction;
 
 public class TrigonometricCalculator extends AbstractFunction {
-    private CosCalculator cosCalculator;
-    private CotCalculator cotCalculator;
-    private CscCalculator cscCalculator;
-    private SecCalculator secCalculator;
-    private SinCalculator sinCalculator;
+    private final CosCalculator cosCalculator;
+    private final CotCalculator cotCalculator;
+    private final CscCalculator cscCalculator;
+    private final SecCalculator secCalculator;
+    private final SinCalculator sinCalculator;
 
     public TrigonometricCalculator(Double accuracy,
                                    CosCalculator cosCalculator,
@@ -33,9 +33,9 @@ public class TrigonometricCalculator extends AbstractFunction {
         return (cot / sec - csc) * (sec * sec) * (cos + sec);
     }
 
-    //todo: add stub
     public Double calculateStub(Double x, Double cos, Double cot, Double csc, Double sec){
         if (x > 0.0) throw new IllegalArgumentException("X должен быть меньше или равен нулю");
+        System.out.println(cos + " " + cot + " " + csc + " " + sec);
         return (cot / sec - csc) * (sec * sec) * (cos + sec);
     }
 }

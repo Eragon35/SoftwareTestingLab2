@@ -22,7 +22,7 @@ public class TrigFunctionUpToDownTests {
     private CscCalculator cscCalculator;
     private SecCalculator secCalculator;
     private SinCalculator sinCalculator;
-    private CsvWriter logger = new CsvWriter("trigonometric/trig.csv", -15.0, 0.0, 0.5);
+    private final CsvWriter logger = new CsvWriter("trigonometric/cos-results.csv", -15.0, 0.0, 0.5);
     private final double ACCURACY = 0.001;
     private final double DELTA = 0.05;
 
@@ -42,11 +42,10 @@ public class TrigFunctionUpToDownTests {
                                                                     sinCalculator);
     }
 
-    @ParameterizedTest(name = "X = {0} * PI / {1}")
+    @ParameterizedTest
     @CsvFileSource(resources = "/trigonometric/trig.csv")
-    @DisplayName("sec(x) is a stub")
-    void secCalculatorIsStub(Double numerator, Double denominator, Double expectedResult) {
-        double x = numerator * PI / denominator;
+    @DisplayName("all are stubs")
+    void allAreStubs(Double x, Double expectedResult) {
 
         double cosStub = cosCalculator.getStubsTable().get(x);
         double cotStub = cotCalculator.getStubsTable().get(x);
@@ -64,19 +63,17 @@ public class TrigFunctionUpToDownTests {
         }
     }
 
-    @ParameterizedTest(name = "X = {0} * PI / {1}")
+    @ParameterizedTest
     @CsvFileSource(resources = "/trigonometric/trig.csv")
-    @DisplayName("cos(x) is a stub; sec(x) isn't a stub")
-    void cosCalculatorIsStub(Double numerator, Double denominator, Double expectedResult) {
-        double x = numerator * PI / denominator;
-
+    @DisplayName("cos(x) is a stub; all other aren't a stub")
+    void cosCalculatorIsStub(Double x, Double expectedResult) {
         double cosStub = cosCalculator.getStubsTable().get(x);
-        double cotStub = cotCalculator.getStubsTable().get(x);
-        double cscStub = cscCalculator.getStubsTable().get(x);
-        double secStub = secCalculator.getStubsTable().get(x);
+        double cot = cotCalculator.calculateFunction(x);
+        double csc = cscCalculator.calculateFunction(x);
+        double sec = secCalculator.calculateFunction(x);
 
         try {
-            double actualResult = trigonometricCalculator.calculateStub(x, cosStub, cotStub, cscStub, secStub);
+            double actualResult = trigonometricCalculator.calculateStub(x, cosStub, cot, csc, sec);
             System.out.println(actualResult);
             assertEquals(expectedResult, actualResult, DELTA);
         } catch (IllegalArgumentException e) {
@@ -85,12 +82,12 @@ public class TrigFunctionUpToDownTests {
         }
     }
 
-    @ParameterizedTest(name = "X = {0} * PI / {1}")
+    @ParameterizedTest
     @CsvFileSource(resources = "/trigonometric/trig.csv")
     @DisplayName("All calculators aren't stubs")
-    void nothingIsStub(Double numerator, Double denominator, Double expectedResult) {
+    void nothingIsStub(Double x, Double expectedResult) {
         try {
-            double actualResult = trigonometricCalculator.calculateFunction(numerator * PI / denominator);
+            double actualResult = trigonometricCalculator.calculateFunction(x);
             System.out.println(actualResult);
             assertEquals(expectedResult, actualResult, DELTA);
         } catch (IllegalArgumentException e) {

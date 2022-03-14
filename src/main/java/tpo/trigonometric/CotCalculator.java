@@ -5,20 +5,21 @@ import tpo.AbstractFunction;
 import static java.lang.Math.*;
 
 public class CotCalculator extends AbstractFunction {
-    private CosCalculator cosCalculator;
-    private SinCalculator sinCalculator;
+    private final CosCalculator cosCalculator;
+    private final SinCalculator sinCalculator;
 
     {
-        getStubsTable().put(PI, tan(PI));
-        getStubsTable().put(-PI, tan(-PI));
-        getStubsTable().put(-PI / 2, tan(-PI / 2));
-        getStubsTable().put(0.0, tan(0.0));
-        getStubsTable().put(PI / 2, tan(PI / 2));
-        getStubsTable().put(PI, tan(PI));
-        getStubsTable().put(3 * PI / 4, tan(3 * PI / 4));
-        getStubsTable().put(-3 * PI / 4, tan(-3 * PI / 4));
-        getStubsTable().put( PI / 4, tan(PI / 4));
-        getStubsTable().put(-PI / 4, tan(-PI / 4));
+        getStubsTable().put(PI, 1 / tan(PI));
+        getStubsTable().put(-PI, 1 / tan(-PI));
+        getStubsTable().put(-PI / 2, 1 / tan(-PI / 2));
+        getStubsTable().put(0.0, 1 / tan(0.0));
+        getStubsTable().put(PI / 2, 1 / tan(PI / 2));
+        getStubsTable().put(3 * PI / 4, 1 / tan(3 * PI / 4));
+        getStubsTable().put(-3 * PI / 4, 1 / tan(-3 * PI / 4));
+        getStubsTable().put( PI / 4, 1 / tan(PI / 4));
+        getStubsTable().put(-PI / 4, 1 / tan(-PI / 4));
+        getStubsTable().put(-PI / 6, 1 / tan(-PI / 6));
+        getStubsTable().put(-PI / 3, 1 / tan(-PI / 3));
     }
 
     public CotCalculator(Double accuracy) {

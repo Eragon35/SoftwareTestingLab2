@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("Log calculator")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-public class LogCalculatorUpToDown {
+public class LogCalculatorUpToDownTests {
     private LnCalculator ln;
     private Log2Calculator log2;
     private Log3Calculator log3;

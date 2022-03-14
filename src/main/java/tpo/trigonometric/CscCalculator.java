@@ -5,18 +5,19 @@ import tpo.AbstractFunction;
 import static java.lang.Math.*;
 
 public class CscCalculator extends AbstractFunction {
-    private SinCalculator sinCalculator;
+    private final SinCalculator sinCalculator;
     {
         getStubsTable().put(PI, 1 / sin(PI));
         getStubsTable().put(-PI, 1 / sin(-PI));
         getStubsTable().put(-PI / 2, 1 / sin(-PI / 2));
         getStubsTable().put(0.0, 1 / sin(0.0));
         getStubsTable().put(PI / 2, 1 / sin(PI / 2));
-        getStubsTable().put(PI, 1 / sin(PI));
         getStubsTable().put(3 * PI / 4, 1 / sin(3 * PI / 4));
         getStubsTable().put(-3 * PI / 4, 1 / sin(-3 * PI / 4));
         getStubsTable().put( PI / 4, 1 / sin(PI / 4));
         getStubsTable().put(-PI / 4, 1 / sin(-PI / 4));
+        getStubsTable().put(-PI / 6, 1 / sin(-PI / 6));
+        getStubsTable().put(-PI / 3, 1 / sin(-PI / 3));
     }
 
     public CscCalculator(Double accuracy) {
